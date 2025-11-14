@@ -5,7 +5,7 @@ import traceback
 
 import io
 import sys
-from lenguage.VIsittor import VIsittor
+from lenguage.MyVisitor import MyVisitor
 
 def run_code(code:str):
     input_stream = InputStream(code)
@@ -19,7 +19,7 @@ def run_code(code:str):
     sys.stdout = buf
 
     try:
-        visitor = VIsittor()
+        visitor = MyVisitor()
         visitor.visit(tree)
         output  = buf.getvalue()
         return output
